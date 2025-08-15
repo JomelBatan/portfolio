@@ -13,8 +13,8 @@
     "@tailwindcss/vite": "^4.1.12",
     "lucide-react": "^0.539.0",
     "nes.css": "^2.2.1",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tech-stack-icons": "^3.3.2"
   },
   "devDependencies": {
