@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Github, Linkedin, Download, Heart, Coffee } from "lucide-react";
 import myResume from "../assets/BATAN_JOMEL_R_RESUME.pdf";
 const RetroPortfolioFooter = () => {
