@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@import "../node_modules/nes.css/css/nes.css";
+
+@theme {
+  --color-darkgreen: #0d0d0d;
+  --color-deepgreen: #003333;
+  --color-midgreen: #0b6648;
+  --color-coolgreen: #439960;
+  --color-palegreen: #89cc89;
+  --color-lightgreen: #eeffe6;
+  --font-sans: "Inter", "sans-serif";
+  --font-heading: "Poppins", "sans-serif";
+  --font-mono: "Fira Code", "monospace";
+}
