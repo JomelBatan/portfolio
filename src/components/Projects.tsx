@@ -1,22 +1,18 @@
+const expo = import.meta.env.VITE_EXPO_APP_LINK;
 const ProjectShowcase = () => {
-  // Sample project data - replace with your actual projects
   const projects = [
     {
       id: 1,
       title: "SWIFFO",
       subtitle: "Online Reservation of Manpower Services",
       liveLink: "https://swiffo.onrender.com/",
-      githubLink: "https://github.com/yourusername/project",
       techStack: ["React", "Tailwind", "Node.Js", "Express.Js", "MongoDB"],
     },
     {
       id: 2,
       title: "Moss",
       subtitle: "Social Media App",
-      preview:
-        "https://via.placeholder.com/180x140/1a1a1a/ffffff?text=WEATHER+APP",
-      liveLink: "https://your-project.com",
-      githubLink: "https://github.com/yourusername/project",
+      liveLink: expo,
       techStack: [
         "React Native",
         "Expo",

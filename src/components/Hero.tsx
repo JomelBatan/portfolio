@@ -63,7 +63,7 @@ export default function Hero() {
       </div>
       <div className="relative flex w-full md:w-1/2 justify-end md:items-center md:justify-center">
         {!loaded && (
-          <div className="w-3/4 h-64 bg-gray-200 animate-pulse rounded-lg"></div>
+          <div className="w-full h-full bg-gray-200 animate-pulse rounded-lg"></div>
         )}
 
         {/* Actual image */}
