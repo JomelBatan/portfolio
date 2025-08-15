@@ -1,7 +1,9 @@
 import TypingAnimation from "./TypingAnimation";
 import picture from "../assets/jomel.png";
+import { useState } from "react";
 
 export default function Hero() {
+  const [loaded, setLoaded] = useState(false);
   return (
     <div className="nes-container !p-0 m-4  flex-col md:flex-row flex h-full justify-center items-center ">
       <div className="flex-row w-full md:w-1/2 px-2 md:px-8 pt-4 md:pt-0">
@@ -60,7 +62,19 @@ export default function Hero() {
         </div>
       </div>
       <div className="relative flex w-full md:w-1/2 justify-end md:items-center md:justify-center">
-        <img src={picture} className="w-3/4" />
+        {!loaded && (
+          <div className="w-3/4 h-64 bg-gray-200 animate-pulse rounded-lg"></div>
+        )}
+
+        {/* Actual image */}
+        <img
+          src={picture}
+          alt="Jomel"
+          className={`w-3/4 transition-opacity duration-500 ${
+            loaded ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={() => setLoaded(true)}
+        />
       </div>
     </div>
   );
