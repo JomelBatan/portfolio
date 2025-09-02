@@ -57,7 +57,7 @@ const ProjectShowcase = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="nes-click group relative"
+              className="nes-click relative"
               onClick={() => window.open(project.liveLink, "_blank")}
             >
               <div className="relative items-center transform transition-all duration-500">
@@ -120,9 +120,17 @@ const ProjectShowcase = () => {
                     </div>
                   </div>
 
-                  {/* Hover "Try it out" Overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white font-mono text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    Try it out →
+                  {/* Try it out button */}
+                  <div className="absolute bottom-2 left-2">
+                    <button
+                      className="px-3 py-1 bg-gray-600 text-white text-x! font-mono! rounded! shadow!"
+                      onClick={(e) => {
+                        e.stopPropagation(); // prevent parent onClick
+                        window.open(project.liveLink, "_blank");
+                      }}
+                    >
+                      Try it out
+                    </button>
                   </div>
                 </div>
               </div>
