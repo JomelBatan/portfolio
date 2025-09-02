@@ -10,6 +10,7 @@ export default async function getProjects(): Promise<Projects[]> {
   try {
     const entries = await client.getEntries({
       content_type: "project",
+      order: ["fields.order"] as "fields.order"[],
     });
 
     return entries.items.map((item) => ({
@@ -18,6 +19,7 @@ export default async function getProjects(): Promise<Projects[]> {
       subtitle: item.fields.subtitle as string,
       techStack: (item.fields.techStack as string[]) || ([] as string[]),
       liveLink: item.fields.liveLink as string,
+      order: item.fields.order as number,
     }));
   } catch (error) {
     console.error("Error fetching projects:", error);
