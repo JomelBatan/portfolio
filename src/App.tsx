@@ -6,12 +6,12 @@ import "./index.css";
 
 function App() {
   return (
-    <>
+    <div className="bg-gray-900 flex-1 pt-4">
       <Hero />
       <TechSet />
       <ProjectShowcase />
       <RetroPortfolioFooter />
-    </>
+    </div>
   );
 }
 

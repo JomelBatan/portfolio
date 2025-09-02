@@ -12,6 +12,7 @@ const CustomIcon = ({ name }: { name: string }) => {
     java: "Java",
     tailwindcss: "Tailwind CSS",
     git: "Git",
+    nextjs: "Next.js",
     vercel: "Vercel",
     github: "Github",
     supabase: "Supabase",
@@ -38,9 +39,9 @@ const CustomIcon = ({ name }: { name: string }) => {
 
       {/* Tooltip */}
       {showTooltip && (
-        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap z-10">
+        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-500 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap z-10">
           {nameMap[name] || name}
-          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-500"></div>
         </div>
       )}
     </div>
@@ -52,10 +53,10 @@ export default function TechSet() {
     <div className="max-w-4xl mx-auto p-8">
       {/* Header */}
       <div className="text-center mb-12">
-        <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-2">
+        <h1 className="text-2xl md:text-4xl font-bold text-gray-400 mb-2">
           Tech Stack
         </h1>
-        <p className="text-gray-600 text-[10px] md:text-base">
+        <p className="text-gray-400 text-[10px] md:text-base">
           Technologies and tools I work with
         </p>
       </div>
@@ -64,14 +65,14 @@ export default function TechSet() {
       <div className="mb-12 item-center">
         <div className="flex items-center mb-6">
           <div className="w-1 h-8  bg-gradient-to-b from-midgreen to-coolgreen rounded-full mr-4"></div>
-          <h2 className="text-lg md:text-2xl font-semibold text-gray-800">
+          <h2 className="text-lg md:text-2xl font-semibold text-gray-400">
             Core Stack
           </h2>
         </div>
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
           <CustomIcon name="react" />
           <CustomIcon name="reactquery" />
-          <CustomIcon name="expressjs" />
+          <CustomIcon name="nextjs" />
           <CustomIcon name="nodejs" />
           <CustomIcon name="typescript" />
           <CustomIcon name="java" />
@@ -82,7 +83,7 @@ export default function TechSet() {
       <div className="mb-8">
         <div className="flex items-center mb-6">
           <div className="w-1 h-8 bg-gradient-to-b from-midgreen to-coolgreen rounded-full mr-4"></div>
-          <h2 className="text-lg md:text-2xl font-semibold text-gray-800">
+          <h2 className="text-lg md:text-2xl font-semibold text-gray-400">
             Tools & Platforms
           </h2>
         </div>
@@ -103,8 +104,8 @@ export default function TechSet() {
       </div>
 
       {/* Footer */}
-      <div className="text-center mt-12 p-6 bg-gray-50 rounded-xl">
-        <p className="text-gray-600 text-[10px] md:text-sm">
+      <div className="text-center mt-12 p-6  rounded-xl">
+        <p className="text-gray-400 text-[10px] md:text-sm">
           Always learning and exploring new technologies to build better
           solutions
         </p>

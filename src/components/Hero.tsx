@@ -5,10 +5,12 @@ import { useState } from "react";
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
   return (
-    <div className="nes-container !p-0 m-4  flex-col md:flex-row flex h-full justify-center items-center ">
+    <div className="border-4 border-gray-400 !p-0 mx-4 mb-4  flex-col md:flex-row flex h-full bg-gray-900 justify-center items-center ">
       <div className="flex-row w-full md:w-1/2 px-2 md:px-8 pt-4 md:pt-0">
-        <p className="text-xl md:text-2xl text-center md:text-start">Hi I'm</p>
-        <h1 className="text-3xl md:text-6xl text-center md:text-start">
+        <p className="text-xl text-gray-400 md:text-2xl text-center md:text-start">
+          Hi I'm
+        </p>
+        <h1 className="text-3xl text-gray-400 md:text-6xl text-center md:text-start">
           Jomel Batan
         </h1>
         <TypingAnimation
@@ -22,7 +24,7 @@ export default function Hero() {
           deleteSpeed={40}
           delayBetweenWords={2500}
         />
-        <p className="text-center md:text-justify">
+        <p className="text-center md:text-justify text-gray-400">
           I work with React and Node to build fast, scalable, and user-friendly
           web and mobile applications.
         </p>

@@ -1,35 +1,56 @@
-const expo = import.meta.env.VITE_EXPO_APP_LINK;
+import { useEffect, useState } from "react";
+import getProjects from "../lib/contentful";
+
+export interface Projects {
+  id: string;
+  title: string;
+  subtitle: string;
+  techStack: string[];
+  liveLink: string;
+}
 const ProjectShowcase = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "SWIFFO",
-      subtitle: "Online Reservation of Manpower Services",
-      liveLink: "https://swiffo.onrender.com/",
-      techStack: ["React", "Tailwind", "Node.Js", "Express.Js", "MongoDB"],
-    },
-    {
-      id: 2,
-      title: "Moss",
-      subtitle: "Social Media App",
-      liveLink: expo,
-      techStack: [
-        "React Native",
-        "Expo",
-        "Nativewind",
-        "MongoDB",
-        "Convex",
-        "Express.Js",
-        "Node.Js",
-      ],
-    },
-  ];
+  const [projects, setProjects] = useState<Projects[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        setLoading(true);
+        const projectsData = await getProjects();
+        setProjects(projectsData);
+      } catch (err) {
+        setError("Failed to load projects");
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center py-12">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-red-600">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="p-8">
       {/* Header */}
       <div className="relative z-10 text-center mb-16">
-        <h1 className="text-2xl md:text-4xl font-bold mb-6 tracking-wider">
+        <h1 className="text-2xl md:text-4xl font-bold text-gray-400 mb-6 tracking-wider">
           Projects
         </h1>
         <div className="w-64 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent mx-auto mt-6"></div>
