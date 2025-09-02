@@ -57,13 +57,13 @@ const ProjectShowcase = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="nes-click"
+              className="nes-click group relative"
               onClick={() => window.open(project.liveLink, "_blank")}
             >
               <div className="relative items-center transform transition-all duration-500">
                 {/* Main Floppy Disk */}
                 <div
-                  className="relative w-full h-80  bg-gradient-to-b from-gray-300 to-gray-400 rounded-sm border border-gray-500 overflow-hidden"
+                  className="relative w-full h-80 bg-gradient-to-b from-gray-300 to-gray-400 rounded-sm border border-gray-500 overflow-hidden"
                   style={{
                     boxShadow:
                       "inset 0 2px 4px rgba(0,0,0,0.1), inset 0 -2px 4px rgba(255,255,255,0.1)",
@@ -120,10 +120,10 @@ const ProjectShowcase = () => {
                     </div>
                   </div>
 
-                  {/* Glow effect */}
-                  <div
-                    className={`absolute inset-0 rounded-sm transition-all duration-500 pointer-events-none `}
-                  ></div>
+                  {/* Hover "Try it out" Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white font-mono text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    Try it out →
+                  </div>
                 </div>
               </div>
             </div>
